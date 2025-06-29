@@ -20,7 +20,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'antd';
-import { uuid } from 'cytoscape/src/util';
+// import { camel2dash } from 'cytoscape/src/util';
+const camel2dash = (str) => {
+  return str.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
+};
 import CypherResultTab from '../../cytoscape/CypherResultTab';
 
 const CypherResultTable = ({ data, ...props }) => {
